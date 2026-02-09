@@ -14,7 +14,7 @@ Most of my career has been in technical systems: embedded controllers, wireless 
 
 ## 🔧 What I'm Working On
 
-### [AI-Powered Episcopal Bulletin Generation System](https://github.com/jhpritch-dev/episcopal-bulletin-generator)
+### [AI-Powered Episcopal Bulletin Generation System](https://github.com/jhpritch-dev/church-ai-infrastructure)
 7-container Docker Compose stack (Ollama, PostgreSQL, Redis, SurrealDB, Paperless-NGX, FastAPI, Flask) with 48GB managed memory and an offline-first 4-tier fallback system. Built to solve a real weekly workflow problem — automating document production that used to take hours of manual effort.
 
 ### [AI-Powered Choral Anthem Planning System (Choir Meta)](https://github.com/jhpritch-dev/choir-meta)
