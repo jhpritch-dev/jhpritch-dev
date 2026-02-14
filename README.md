@@ -14,6 +14,12 @@ Most of my career has been in technical systems: embedded controllers, wireless 
 
 ## 🔧 What I'm Working On
 
+### [Bifrost — Household Document RAG System](https://github.com/jhpritch-dev/bifrost--docs)
+End-to-end document intelligence pipeline: monitors a shared network drive for incoming documents, OCRs and classifies them via Paperless-ngx, generates vector embeddings through Ollama, and provides semantic search and AI-powered chat through Open WebUI + Qdrant. Dual-profile architecture — a full GPU-accelerated dev stack (AMD ROCm on RX 9070) and a lean CPU-only production server profile running ~6-7GB RAM. Includes a custom Python bridge service for document chunking and embedding, n8n workflow automation for bill due-date extraction, and ntfy push notifications.
+
+### [Windows Docker Home Server Stack](https://github.com/jhpritch-dev/windows-docker-homeserver)
+Production Docker Compose stack running 11 containers on Windows 10/11 Pro with Docker Desktop + WSL2. Manages Immich (400K+ photo library with VectorChord-accelerated PostgreSQL), Home Assistant for smart home automation, ownCloud for file sync, Jellyfin for media streaming, and automated backups via Duplicati — all orchestrated across a tiered storage architecture (10TB media pool, SSD databases, HDD caches). Includes setup automation, database backup scripts, and VHDX maintenance tooling.
+
 ### [AI-Powered Episcopal Bulletin Generation System](https://github.com/jhpritch-dev/church-ai-infrastructure)
 7-container Docker Compose stack (Ollama, PostgreSQL, Redis, SurrealDB, Paperless-NGX, FastAPI, Flask) with 48GB managed memory and an offline-first 4-tier fallback system. Built to solve a real weekly workflow problem — automating document production that used to take hours of manual effort.
 
@@ -26,20 +32,19 @@ Python automation producing 49 Adobe XMP preset files from structured recipes. T
 ### AI Infrastructure Ops Assistant Agent *(In Development)*
 Containerized monitoring agent using multiple local LLM runtimes (Ollama, LM Studio, AMD AI Suite) for infrastructure health monitoring, natural language querying, and anomaly detection across a production Docker environment.
 
-### Private Cloud Platform & Zero-Trust Infrastructure
-Dual-CPU server running Docker microservices (OwnCloud, Immich/Photoprism, Ollama, Home Assistant, automated backups) on 10TB software-defined storage with SSD caching. Zero-trust networking via Tailscale/WireGuard mesh VPN, VLAN segmentation, 2.5GbE switching. Running 3+ years with zero data loss.
-
 ---
 
 ## 🛠 Tech Stack
 
 | Domain | Tools |
 |---|---|
-| **AI/ML** | Ollama, LM Studio, AMD AI Suite, RAG pipelines, model quantization, document processing |
+| **AI/ML** | Ollama, LM Studio, AMD ROCm, RAG pipelines, Qdrant, vector embeddings, document processing |
 | **Infrastructure** | Docker, multi-service orchestration, 10TB+ storage architecture, backup/DR, system monitoring |
+| **Data** | PostgreSQL, Redis, SurrealDB, SQLite/FTS5, Qdrant vector DB, Paperless-ngx |
 | **Networking** | Tailscale/WireGuard, VPN gateway, VLANs, network segmentation, 2.5GbE |
-| **Development** | Python, JavaScript/Node.js, FastAPI, Express.js, Flask, Bash, PowerShell, Git |
-| **Systems** | Linux (Mint/Debian/Ubuntu), Windows Server, AWS (Cloud Practitioner in progress) |
+| **Automation** | n8n workflow automation, Watchtower, PowerShell/Bash scripting, CI/CD |
+| **Development** | Python, JavaScript/Node.js, FastAPI, Express.js, Flask, Git |
+| **Systems** | Linux (Mint/Debian/Ubuntu), Windows Server, WSL2, Docker Desktop, AWS (Cloud Practitioner in progress) |
 
 ---
 
