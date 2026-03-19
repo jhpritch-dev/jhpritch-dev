@@ -1,6 +1,6 @@
 # John H. Pritchard
 
-**AI Infrastructure Engineer | Self-Hosted LLM Deployment | Docker Orchestration | Privacy-First Architecture**
+**AI Infrastructure Engineer | Distributed Inference Systems | Self-Hosted LLM Deployment | Privacy-First Architecture**
 
 📍 Gainesville, FL (Remote) · 📧 jhpritch@hotmail.com
 
@@ -14,7 +14,26 @@ Most of my career has been in technical systems: embedded controllers, wireless 
 
 ## 🔧 What I'm Working On
 
-### [Bifrost — Household Document RAG System](https://github.com/jhpritch-dev/bifrost--docs)
+### [BIFROST — Distributed AI Inference Router](https://github.com/jhpritch-dev/bifrost-platform) *(Active Development)*
+
+> Route smarter. Infer locally. Escalate only when necessary.
+
+Privacy-first inference middleware that routes AI requests across a heterogeneous 3-node GPU fleet based on cognitive complexity — achieving **85–92% cost savings** versus cloud-only approaches. Every request is classified into one of four complexity bands (TRIVIAL / MODERATE / COMPLEX / FRONTIER) and dispatched to the most capable available local model before any cloud API is considered.
+
+**Core capabilities:**
+- **Complexity Router** — LangGraph-based routing pipeline with learned NPU classifier; four-band dispatch with structured handoff artifacts between tiers
+- **AUTOPILOT** — Autonomous parallel execution engine: decomposes tasks into a dependency-ordered DAG, runs subtasks in parallel waves across the local tier hierarchy, applies four-level semantic verification, and escalates to cloud only after exhausting local capacity
+- **Arbiter** — Fleet health monitor and mode controller (JARVIS full-local / WORKSHOP hybrid / WORKSHOP-OFFLINE zero-egress privacy mode)
+- **Micro-inference tier** — Dedicated accelerators for embedding and classification (Vega 8 iGPU + XDNA 2 NPU) with zero contention against generative inference workloads
+- **BIFROST Portal** — React ops dashboard: live fleet status, routing metrics, AUTOPILOT launcher, profile switching, and mode control
+
+**Fleet:** RX 9070 XT (16GB, Tier 1a) · RX 5700 XT + Vega 8 (Tier 1a-hearth + micro-inference, 24/7 UPS) · Radeon 8060S 96GB unified + XDNA 2 NPU (Tier 1b / 2 / 2.5 + classifier)
+
+`Python` `FastAPI` `LangGraph` `Pydantic v2` `Ollama` `ChromaDB` `Prometheus` `Grafana` `FluxCD` `k3d` `FastMCP` `React`
+
+---
+
+### [Bifrost Docs — Household Document RAG System](https://github.com/jhpritch-dev/bifrost--docs)
 End-to-end document intelligence pipeline: monitors a shared network drive for incoming documents, OCRs and classifies them via Paperless-ngx, generates vector embeddings through Ollama, and provides semantic search and AI-powered chat through Open WebUI + Qdrant. Dual-profile architecture — a full GPU-accelerated dev stack (AMD ROCm on RX 9070) and a lean CPU-only production server profile running ~6-7GB RAM. Includes a custom Python bridge service for document chunking and embedding, n8n workflow automation for bill due-date extraction, and ntfy push notifications.
 
 ### [Windows Docker Home Server Stack](https://github.com/jhpritch-dev/windows-docker-homeserver)
@@ -29,22 +48,20 @@ Three-tier architecture: SQLite with FTS5 full-text search, Express.js REST API,
 ### [Automated Photography Preset Generation System](https://github.com/jhpritch-dev/lightroom-preset-automation)
 Python automation producing 49 Adobe XMP preset files from structured recipes. Template-driven generation pipeline with multi-tier commercial packaging — similar patterns to infrastructure-as-code workflows.
 
-### AI Infrastructure Ops Assistant Agent *(In Development)*
-Containerized monitoring agent using multiple local LLM runtimes (Ollama, LM Studio, AMD AI Suite) for infrastructure health monitoring, natural language querying, and anomaly detection across a production Docker environment.
-
 ---
 
 ## 🛠 Tech Stack
 
 | Domain | Tools |
 |---|---|
-| **AI/ML** | Ollama, LM Studio, AMD ROCm, RAG pipelines, Qdrant, vector embeddings, document processing |
-| **Infrastructure** | Docker, multi-service orchestration, 10TB+ storage architecture, backup/DR, system monitoring |
-| **Data** | PostgreSQL, Redis, SurrealDB, SQLite/FTS5, Qdrant vector DB, Paperless-ngx |
+| **AI/ML** | Ollama, LangGraph, RAG pipelines, ChromaDB, Qdrant, vector embeddings, document processing, NPU inference |
+| **Inference** | Distributed routing, complexity classification, autonomous agent orchestration, local-first LLM deployment |
+| **Infrastructure** | Docker, k3d, FluxCD, multi-service orchestration, 10TB+ storage architecture, backup/DR, system monitoring |
+| **Data** | PostgreSQL, Redis, SurrealDB, SQLite/FTS5, Qdrant, Prometheus, Grafana |
 | **Networking** | Tailscale/WireGuard, VPN gateway, VLANs, network segmentation, 2.5GbE |
-| **Automation** | n8n workflow automation, Watchtower, PowerShell/Bash scripting, CI/CD |
-| **Development** | Python, JavaScript/Node.js, FastAPI, Express.js, Flask, Git |
-| **Systems** | Linux (Mint/Debian/Ubuntu), Windows Server, WSL2, Docker Desktop, AWS (Cloud Practitioner in progress) |
+| **Automation** | n8n, FastMCP, Watchtower, PowerShell/Bash scripting, CI/CD |
+| **Development** | Python, JavaScript/Node.js, FastAPI, Express.js, React, Git |
+| **Systems** | Linux (Ubuntu/Debian), Windows Server, WSL2, Docker Desktop, AMD ROCm/Vulkan |
 
 ---
 
